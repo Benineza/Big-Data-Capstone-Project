@@ -90,3 +90,6 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 ### 4. Evaluating the Model
 * I chose silhouette score as the evaluation metrics
 <img width="883" height="492" alt="Image" src="https://github.com/user-attachments/assets/d8600f10-a1e8-408a-8b20-9b86d0826e0e" />
+
+### 6. Incorporate Innovation
+<img width="776" height="494" alt="Image" src="https://github.com/user-attachments/assets/9ca0652b-89d2-49bc-b466-64a94d19ebad" />
