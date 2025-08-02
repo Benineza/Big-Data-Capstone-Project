@@ -87,3 +87,6 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 * I chose classification as the suitable model & Train the model on the dataset
 <img width="784" height="513" alt="Image" src="https://github.com/user-attachments/assets/0e9ab7f2-6172-4e5c-8484-1327c822ccf8" />
 
+### 4. Evaluating the Model
+* I chose silhouette score as the evaluation metrics
+<img width="883" height="492" alt="Image" src="https://github.com/user-attachments/assets/d8600f10-a1e8-408a-8b20-9b86d0826e0e" />
