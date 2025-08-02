@@ -73,4 +73,5 @@ cleaned_df = clean_data(df)
 print("\nCleaning complete. Final shape:", cleaned_df.shape)
 ```
 **OUTPUT**
+
 <img width="255" height="287" alt="Image" src="https://github.com/user-attachments/assets/fae81b59-befc-474e-897e-03efe9e60661" /> <img width="339" height="371" alt="Image" src="https://github.com/user-attachments/assets/cc8bb522-24d1-48e4-951c-5cc5769df190" />
