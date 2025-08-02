@@ -82,6 +82,8 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 * Visualize distributions and relationships among variables
 <img width="1067" height="357" alt="Image" src="https://github.com/user-attachments/assets/cd70abf1-788a-42b2-aa75-e83e813981b4" />
 <img width="879" height="498" alt="Image" src="https://github.com/user-attachments/assets/cd10ecd2-3be0-4180-8c01-9e43240628fd" />
+
 ### 3. Applying a Machine Learning or Clustering Model
-* I chose classification as the suitable model
+* I chose classification as the suitable model & Train the model on the dataset
+<img width="784" height="513" alt="Image" src="https://github.com/user-attachments/assets/0e9ab7f2-6172-4e5c-8484-1327c822ccf8" />
 
