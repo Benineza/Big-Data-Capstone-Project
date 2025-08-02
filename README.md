@@ -75,3 +75,9 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 **OUTPUT**
 
 <img width="255" height="287" alt="Image" src="https://github.com/user-attachments/assets/fae81b59-befc-474e-897e-03efe9e60661" /> <img width="339" height="371" alt="Image" src="https://github.com/user-attachments/assets/cc8bb522-24d1-48e4-951c-5cc5769df190" />
+### 2. EXPLORATORY DATA ANALYSIS (EDA)
+* Descriptive statistics
+<img width="1068" height="485" alt="Image" src="https://github.com/user-attachments/assets/86deafff-2916-4c92-812e-ecbe9991603a" />
+
+* Visualize distributions and relationships among variables
+<img width="1067" height="357" alt="Image" src="https://github.com/user-attachments/assets/cd70abf1-788a-42b2-aa75-e83e813981b4" />
