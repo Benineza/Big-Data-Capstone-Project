@@ -5,15 +5,15 @@
 # Big Data Capstone Project
 # PART 1: Problem Definition & Planning
 ### I. Sector Selection
-Transportation
+Transportation Sector
 
 ### II. Problem Statement
 This project aims to analyze Citi Bike usage patterns in New York City to answer key questions:
 + What are the peak usage times for bike sharing?
 + Which stations are most popular and why?
 + How far do riders typically travel?
-+ What factors influence bike usage (day of week, weather, etc.)?
-+ Can we predict high-demand periods to optimize bike distribution?
++ What factors influence bike usage (day of week, weather, etc)
++ Can we predict high demand periods to optimize bike distribution?
 
 ### III. Dataset Identification
 Dataset Title: Citi Bike Trip Data (bike.csv)
