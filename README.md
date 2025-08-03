@@ -101,3 +101,15 @@ Analyzing ride durations, distances, stations, speed and purpose of ride covered
 **Purpose:** Analyzing bikes ridden in the city what purpose they were ridden for, where they were ridden at and if the rides were by members or casuals 
 ### Incorporate Interactivity with the Appropriate Visuals
 <img width="761" height="438" alt="Image" src="https://github.com/user-attachments/assets/22c42205-70c4-4cb9-892d-4969b0199558" />
+<img width="761" height="438" alt="Image" src="https://github.com/user-attachments/assets/682a09dc-bbd1-4ab3-9c6d-397ade2002be" />
+
+### Innovative Features (DAX formulas & Custom Tooltip)
+Average Speed for Members
+```
+Avg_Speed_Member = AVERAGEX(FILTER('bike_cleaned', 'bike_cleaned'[member_casual] = 1), 'bike_cleaned'[speed_kmh])
+```
+Total Distance by Casuals
+```
+Total_Distance_Casual = CALCULATE(SUM('bike_cleaned'[distance_km]), 'bike_cleaned'[member_casual] = 0)
+```
+
