@@ -17,9 +17,13 @@ This project aims to analyze Citi Bike usage patterns in New York City to answer
 
 ### III. Dataset Identification
 Dataset Title: Citi Bike Trip Data (bike.csv)
+
 Source Link: https://citibikenyc.com/system-data
+
 Number of Rows and Columns: [To be filled after loading data]
+
 Data Structure: Structured (CSV)
+
 Data Status: Requires Preprocessing
 
 # PART 2: Python Analytics Tasks
