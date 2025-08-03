@@ -99,3 +99,5 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 Analyzing ride durations, distances, stations, speed and purpose of ride covered by Citi Bikes.
 
 **Purpose:** Analyzing bikes ridden in the city what purpose they were ridden for, where they were ridden at and if the rides were by members or casuals 
+### Incorporate Interactivity with the Appropriate Visuals
+<img width="761" height="438" alt="Image" src="https://github.com/user-attachments/assets/22c42205-70c4-4cb9-892d-4969b0199558" />
