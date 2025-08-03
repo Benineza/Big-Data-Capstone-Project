@@ -3,7 +3,7 @@
 
 -----------------------------
 # Big Data Capstone Project
-## Part I: Problem Definition & Planning
+# PART 1: Problem Definition & Planning
 ### I. Sector Selection
 Transportation
 
@@ -22,7 +22,7 @@ Number of Rows and Columns: [To be filled after loading data]
 Data Structure: Structured (CSV)
 Data Status: Requires Preprocessing
 
-## Part II: Python Analytics Tasks
+# PART 2: Python Analytics Tasks
 ### 1. Clean the Dataset
 ```
 # 1. DATA CLEANING
@@ -93,3 +93,5 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 
 ### 6. Incorporate Innovation
 <img width="776" height="494" alt="Image" src="https://github.com/user-attachments/assets/9ca0652b-89d2-49bc-b466-64a94d19ebad" />
+
+# PART 3 POWER BI DASHBOARD TASKS
