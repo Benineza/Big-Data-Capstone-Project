@@ -163,6 +163,7 @@ def evaluate_model(model, X_test, y_test):
 
 evaluate_model(model, X_test, y_test)
 ```
+**OUTPUT**
 <img width="784" height="513" alt="Image" src="https://github.com/user-attachments/assets/0e9ab7f2-6172-4e5c-8484-1327c822ccf8" />
 
 ### 4. Evaluating the Model
@@ -224,6 +225,7 @@ def perform_clustering(df):
 
 clustered_df = perform_clustering(cleaned_df)
 ```
+**OUTPUT**
 <img width="883" height="492" alt="Image" src="https://github.com/user-attachments/assets/d8600f10-a1e8-408a-8b20-9b86d0826e0e" />
 
 ### 6. Incorporate Innovation
@@ -264,6 +266,7 @@ def infer_trip_purposes(df):
 
 cleaned_df = infer_trip_purposes(cleaned_df)
 ```
+**OUTPUT**
 <img width="776" height="494" alt="Image" src="https://github.com/user-attachments/assets/9ca0652b-89d2-49bc-b466-64a94d19ebad" />
 
 ### Creating the final clean dataset
