@@ -77,6 +77,40 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 <img width="255" height="287" alt="Image" src="https://github.com/user-attachments/assets/fae81b59-befc-474e-897e-03efe9e60661" /> <img width="339" height="371" alt="Image" src="https://github.com/user-attachments/assets/cc8bb522-24d1-48e4-951c-5cc5769df190" />
 ### 2. EXPLORATORY DATA ANALYSIS (EDA)
 * Descriptive statistics
+```
+def perform_eda(df):
+    # Descriptive statistics
+    print("\nDescriptive Statistics:")
+    print(df[['duration', 'distance_km', 'speed_kmh']].describe())
+    
+    # Visualizations
+    plt.figure(figsize=(15, 10))
+    
+    # Duration distribution
+    plt.subplot(2, 2, 1)
+    sns.histplot(df['duration']/60, bins=50, kde=True)
+    plt.title('Trip Durations (minutes)')
+    
+    # Distance distribution
+    plt.subplot(2, 2, 2)
+    sns.histplot(df['distance_km'], bins=50, kde=True)
+    plt.title('Trip Distances (km)')
+    
+    # Rider type distribution
+    plt.subplot(2, 2, 3)
+    df['member_casual'].value_counts().plot(kind='bar')
+    plt.title('Member vs Casual Riders')
+    plt.xticks([0, 1], ['Casual', 'Member'], rotation=0)
+    
+    # Bike type distribution
+    plt.subplot(2, 2, 4)
+    df['rideable_type'].value_counts().plot(kind='bar')
+    plt.title('Bike Type Distribution')
+    
+    plt.tight_layout()
+    plt.show()
+```
+**OUTPUT**
 <img width="1068" height="485" alt="Image" src="https://github.com/user-attachments/assets/86deafff-2916-4c92-812e-ecbe9991603a" />
 
 * Visualize distributions and relationships among variables
