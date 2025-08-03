@@ -266,6 +266,11 @@ cleaned_df = infer_trip_purposes(cleaned_df)
 ```
 <img width="776" height="494" alt="Image" src="https://github.com/user-attachments/assets/9ca0652b-89d2-49bc-b466-64a94d19ebad" />
 
+### Creating the final clean dataset
+```
+cleaned_df.to_csv('bike_cleaned.csv', index=False)
+```
+
 # PART 3 Power BI Dashboard Tasks
 ### Problem & Insights
 Analyzing ride durations, distances, stations, speed and purpose of ride covered by Citi Bikes.
