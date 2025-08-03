@@ -72,7 +72,7 @@ def clean_data(df):
 cleaned_df = clean_data(df)
 print("\nCleaning complete. Final shape:", cleaned_df.shape)
 ```
-**OUTPUT**
+**OUTPUT:**
 
 <img width="255" height="287" alt="Image" src="https://github.com/user-attachments/assets/fae81b59-befc-474e-897e-03efe9e60661" /> <img width="339" height="371" alt="Image" src="https://github.com/user-attachments/assets/cc8bb522-24d1-48e4-951c-5cc5769df190" />
 ### 2. EXPLORATORY DATA ANALYSIS (EDA)
@@ -110,7 +110,8 @@ def perform_eda(df):
     plt.tight_layout()
     plt.show()
 ```
-**OUTPUT**
+**OUTPUT:**
+
 <img width="1068" height="485" alt="Image" src="https://github.com/user-attachments/assets/86deafff-2916-4c92-812e-ecbe9991603a" />
 
 * Visualize distributions and relationships among variables
@@ -163,7 +164,8 @@ def evaluate_model(model, X_test, y_test):
 
 evaluate_model(model, X_test, y_test)
 ```
-**OUTPUT**
+**OUTPUT:**
+
 <img width="784" height="513" alt="Image" src="https://github.com/user-attachments/assets/0e9ab7f2-6172-4e5c-8484-1327c822ccf8" />
 
 ### 4. Evaluating the Model
@@ -225,7 +227,8 @@ def perform_clustering(df):
 
 clustered_df = perform_clustering(cleaned_df)
 ```
-**OUTPUT**
+**OUTPUT:**
+
 <img width="883" height="492" alt="Image" src="https://github.com/user-attachments/assets/d8600f10-a1e8-408a-8b20-9b86d0826e0e" />
 
 ### 6. Incorporate Innovation
@@ -266,7 +269,8 @@ def infer_trip_purposes(df):
 
 cleaned_df = infer_trip_purposes(cleaned_df)
 ```
-**OUTPUT**
+**OUTPUT:**
+
 <img width="776" height="494" alt="Image" src="https://github.com/user-attachments/assets/9ca0652b-89d2-49bc-b466-64a94d19ebad" />
 
 ### Creating the final clean dataset
