@@ -104,11 +104,11 @@ Analyzing ride durations, distances, stations, speed and purpose of ride covered
 <img width="761" height="438" alt="Image" src="https://github.com/user-attachments/assets/682a09dc-bbd1-4ab3-9c6d-397ade2002be" />
 
 ### Innovative Features (DAX formulas & Custom Tooltip)
-Average Speed for Members
+***Average Speed for Members***
 ```
 Avg_Speed_Member = AVERAGEX(FILTER('bike_cleaned', 'bike_cleaned'[member_casual] = 1), 'bike_cleaned'[speed_kmh])
 ```
-Total Distance by Casuals
+***Total Distance by Casuals***
 ```
 Total_Distance_Casual = CALCULATE(SUM('bike_cleaned'[distance_km]), 'bike_cleaned'[member_casual] = 0)
 ```
