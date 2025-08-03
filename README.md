@@ -97,4 +97,5 @@ print("\nCleaning complete. Final shape:", cleaned_df.shape)
 # PART 3 Power BI Dashboard Tasks
 ### Problem & Insights
 Analyzing ride durations, distances, stations, speed and purpose of ride covered by Citi Bikes.
+
 **Purpose:** Analyzing bikes ridden in the city what purpose they were ridden for, where they were ridden at and if the rides were by members or casuals 
