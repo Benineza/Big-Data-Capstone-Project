@@ -119,13 +119,151 @@ def perform_eda(df):
 
 ### 3. Applying a Machine Learning or Clustering Model
 * I chose classification as the suitable model & Train the model on the dataset
+```
+# CLASSIFICATION MODEL (Member vs Casual Prediction)
+# Prepare data
+def prepare_data(df):
+    features = ['duration', 'distance_km', 'speed_kmh', 'start_lat', 'start_lng', 'end_lat', 'end_lng']
+    X = df[features]
+    y = df['member_casual']
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+    
+    return X_train_scaled, X_test_scaled, y_train, y_test
+
+X_train, X_test, y_train, y_test = prepare_data(cleaned_df)
+
+# Train model
+def train_classification_model(X_train, y_train):
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+    return model
+
+model = train_classification_model(X_train, y_train)
+
+# Evaluate model
+def evaluate_model(model, X_test, y_test):
+    y_pred = model.predict(X_test)
+    
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_pred))
+    
+    print("\nAccuracy Score:", accuracy_score(y_test, y_pred))
+    
+    features = ['duration', 'distance_km', 'speed_kmh', 'start_lat', 'start_lng', 'end_lat', 'end_lng']
+    importances = model.feature_importances_
+    
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=importances, y=features)
+    plt.title('Feature Importance')
+    plt.show()
+
+evaluate_model(model, X_test, y_test)
+```
 <img width="784" height="513" alt="Image" src="https://github.com/user-attachments/assets/0e9ab7f2-6172-4e5c-8484-1327c822ccf8" />
 
 ### 4. Evaluating the Model
 * I chose silhouette score as the evaluation metrics
+```
+# CLUSTERING ANALYSIS
+def perform_clustering(df):
+    # 6.1 Prepare data
+    features = ['duration', 'distance_km', 'speed_kmh']
+    X = df[features]
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    
+    # Determine optimal clusters
+    range_n_clusters = [2, 3, 4, 5, 6]
+    best_score = -1
+    best_n = 2
+    
+    for n_clusters in range_n_clusters:
+        kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+        cluster_labels = kmeans.fit_predict(X_scaled)
+        silhouette_avg = silhouette_score(X_scaled, cluster_labels)
+        print(f"For n_clusters = {n_clusters}, silhouette score is {silhouette_avg}")
+        
+        if silhouette_avg > best_score:
+            best_score = silhouette_avg
+            best_n = n_clusters
+    
+    print(f"\nOptimal number of clusters: {best_n} with score {best_score}")
+    
+    # Final clustering
+    kmeans = KMeans(n_clusters=best_n, random_state=42)
+    df['cluster'] = kmeans.fit_predict(X_scaled)
+    
+    # Visualize clusters
+    plt.figure(figsize=(15, 5))
+    
+    plt.subplot(1, 2, 1)
+    sns.scatterplot(x='distance_km', y='duration', hue='cluster', data=df, palette='viridis')
+    plt.title('Clusters by Distance/Duration')
+    
+    plt.subplot(1, 2, 2)
+    sns.scatterplot(x='speed_kmh', y='distance_km', hue='cluster', data=df, palette='viridis')
+    plt.title('Clusters by Speed/Distance')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Cluster analysis
+    print("\nCluster Characteristics:")
+    print(df.groupby('cluster').agg({
+        'duration': 'mean',
+        'distance_km': 'mean',
+        'speed_kmh': 'mean',
+        'member_casual': 'mean'
+    }))
+    
+    return df
+
+clustered_df = perform_clustering(cleaned_df)
+```
 <img width="883" height="492" alt="Image" src="https://github.com/user-attachments/assets/d8600f10-a1e8-408a-8b20-9b86d0826e0e" />
 
 ### 6. Incorporate Innovation
+```
+# 6. INNOVATIVE ANALYSIS: TRIP PURPOSE INFERENCE
+def infer_trip_purposes(df):
+    # Calculate CBD distances
+    times_square_lat, times_square_lon = 40.7580, -73.9855
+    
+    df['start_dist_to_cbd'] = df.apply(
+        lambda x: haversine(x['start_lat'], x['start_lng'], times_square_lat, times_square_lon), axis=1)
+    df['end_dist_to_cbd'] = df.apply(
+        lambda x: haversine(x['end_lat'], x['end_lng'], times_square_lat, times_square_lon), axis=1)
+    
+    # Infer purposes
+    conditions = [
+        (df['start_dist_to_cbd'] < 2) & (df['end_dist_to_cbd'] < 2),
+        (df['start_dist_to_cbd'] < 2) & (df['end_dist_to_cbd'] >= 2),
+        (df['start_dist_to_cbd'] >= 2) & (df['end_dist_to_cbd'] < 2),
+        (df['start_dist_to_cbd'] >= 2) & (df['end_dist_to_cbd'] >= 2)
+    ]
+    
+    choices = ['CBD circulation', 'CBD departure', 'CBD arrival', 'Non-CBD trip']
+    df['inferred_purpose'] = np.select(conditions, choices)
+    
+    # Analyze purposes
+    print("\nTrip Purposes by Rider Type:")
+    print(pd.crosstab(df['inferred_purpose'], df['member_casual']))
+    
+    # Visualization
+    plt.figure(figsize=(10, 6))
+    sns.countplot(x='inferred_purpose', hue='member_casual', data=df)
+    plt.title('Trip Purposes by Rider Type')
+    plt.xticks(rotation=45)
+    plt.show()
+    
+    return df
+
+cleaned_df = infer_trip_purposes(cleaned_df)
+```
 <img width="776" height="494" alt="Image" src="https://github.com/user-attachments/assets/9ca0652b-89d2-49bc-b466-64a94d19ebad" />
 
 # PART 3 Power BI Dashboard Tasks
