@@ -101,7 +101,7 @@ Analyzing ride durations, distances, stations, speed and purpose of ride covered
 **Purpose:** Analyzing bikes ridden in the city what purpose they were ridden for, where they were ridden at and if the rides were by members or casuals 
 ### Incorporate Interactivity with the Appropriate Visuals
 <img width="761" height="438" alt="Image" src="https://github.com/user-attachments/assets/22c42205-70c4-4cb9-892d-4969b0199558" />
-<img width="761" height="438" alt="Image" src="https://github.com/user-attachments/assets/682a09dc-bbd1-4ab3-9c6d-397ade2002be" />
+<img width="762" height="419" alt="Image" src="https://github.com/user-attachments/assets/004e9c27-6ddf-4d57-a2da-7a04a71a3632" />
 
 ### Innovative Features (DAX formulas & Custom Tooltip)
 ***Average Speed for Members***
